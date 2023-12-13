@@ -29,7 +29,7 @@ EXPOSE 8080
 `./gradlew build`
 or run task `assemble` in your IDE to create jar file
 3. Build docker container
-`docker build -t ktor-sample .`
+`docker build .`
 4. You can test your containter with command
 `docker run -it -p 8080:8080  ktor-sample`
 ```
@@ -93,7 +93,7 @@ spec:
 2. Apply our manifest to create components `kubectl apply -f deployment.yaml`
 3. Check your pods `kubectl get pods`
 4. For more details we can use command `kubectl descripe pod pod-name`
-5. Open port `kubectl port-forward service/sample-service 8080:8080` OR `minikube service sample-service` and **don't close console**
+5. Open port `kubectl port-forward service/sample-service 8080:8080` OR `minikube service sample-service` or `minikube tunnel` and **don't close console**
 6. Now you can access to your ktor application
 7. lets test it - with postman or with our app
 ```json
@@ -123,3 +123,6 @@ spec:
 3. Rebuild new docker image
 4. Push new image to docker hub
 5. Also you can clear old containers to let Kubernetes definitely know that a new container needs to be used
+
+## Result of our work
+![scheme](sample.png)
